@@ -46,8 +46,11 @@ String _katakanaToHiragana(
       continue;
       // Transform long vowels: 'オー' to 'おう'.
     } else if (previousKana.isNotEmpty && isCharInnerLongDash(char, index)) {
-      // Transform previousKana back to romaji, and slice off the vowel.
-      final romaji = toRomaji(previousKana).chars.last;
+      // Transform previousKana back to romaji, and slice off the vowel. A lone
+      // sokuon ('っ') romanizes to nothing, so there is no vowel to lengthen:
+      // fall through with an empty romaji and treat 'ー' as a hyphen.
+      final previousRomaji = toRomaji(previousKana).chars;
+      final romaji = previousRomaji.isEmpty ? '' : previousRomaji.last;
       // However, ensure 'オー' => 'おお' => 'oo' if this is a transform on the
       // way to romaji.
       if (_isCharKatakana(input[index - 1]) &&

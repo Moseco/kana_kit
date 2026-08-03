@@ -177,6 +177,7 @@ void main() {
         the(input: 'wi', shouldBecome: 'うぃ');
         the(input: 'スーパー', shouldBecome: 'すうぱあ');
         the(input: 'バンゴー', shouldBecome: 'ばんごう');
+        the(input: 'アッー', shouldBecome: 'あっー');
         the(input: 'only カナ', shouldBecome: 'おんly　かな');
         the(input: 'toukyou, オオサカ', shouldBecome: 'とうきょう、　おおさか');
         the(input: 'IROHANIHOHETO', shouldBecome: 'いろはにほへと');
@@ -197,6 +198,7 @@ void main() {
         the(input: 'wi', shouldBecome: 'wi');
         the(input: 'スーパー', shouldBecome: 'すうぱあ');
         the(input: 'バンゴー', shouldBecome: 'ばんごう');
+        the(input: 'アッー', shouldBecome: 'あっー');
         the(input: 'only カナ', shouldBecome: 'only かな');
         the(input: 'toukyou, オオサカ', shouldBecome: 'toukyou, おおさか');
         the(input: 'IROHANIHOHETO', shouldBecome: 'IROHANIHOHETO');
